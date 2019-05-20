@@ -6,7 +6,7 @@
   vars:
     docker__version: "18.06"
 
-    docker__users: ["test"]
+    docker__users: ["{{ ansible_env.SUDO_USER | d('root') }}"]
 
     docker__daemon_json: |
       "dns": ["8.8.8.8"]
